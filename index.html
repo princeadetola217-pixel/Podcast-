@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PodClass English - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Federal_University_Oye-Ekiti_logo.png" alt="FUOYE Logo" class="logo">
+      <div>
+        <h3>FEDERAL UNIVERSITY OYE-EKITI (FUOYE)</h3>
+        <p>Department of Computer Science</p>
+        <p>Project / Research Work</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html" class="active">🏠 Home</a>
+      <a href="lessons.html">📖 Lessons</a>
+      <a href="podcasts.html">🎙️ Podcasts</a>
+      <a href="quizzes.html">📋 Quizzes</a>
+      <a href="progress.html">📊 Progress</a>
+      <a href="about.html">ℹ️ About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="tag">PODCAST-BASED INSTRUCTIONAL STRATEGY</p>
+      <h1>Learn English <br>Through <span>Podcasts</span></h1>
+      <p class="sub">An interactive podcast-based learning platform designed to improve students' learning outcomes in English Language.</p>
+      <div class="hero-btns">
+        <a href="podcasts.html" class="btn-primary">🎙️ Start Learning</a>
+        <a href="https://forms.gle/YOUR-PRETEST" target="_blank" class="btn-outline">📋 Take Pre-Test</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://i.ibb.co/0B7Z9kG/books-mic.png" alt="Books and Mic">
+    </div>
+    <div class="featured">
+      <h4>FEATURED LESSON</h4>
+      <h3>Parts of Speech</h3>
+      <p>Understand the different parts of speech and how they are used in sentences.</p>
+      <div class="audio-player">
+        <audio id="featuredAudio" src="audio/ep1.mp3"></audio>
+        <div class="player-controls">
+          <button onclick="rewind()">⏪10</button>
+          <button onclick="prev()">⏮️</button>
+          <button id="playBtn" onclick="playPause()">▶️</button>
+          <button onclick="next()">⏭️</button>
+          <button onclick="forward()">10⏩</button>
+        </div>
+        <input type="range" id="progress" value="0">
+        <a href="lessons.html" class="btn-small">Go to Lesson →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>INTERACTIVE LEARNING EXPERIENCE</h2>
+    <div class="feature-grid">
+      <div class="feature"><div class="icon">🎧</div><h4>Listen</h4><p>Listen to carefully prepared educational podcasts.</p></div>
+      <div class="feature"><div class="icon">📋</div><h4>Answer</h4><p>Answer interactive questions related to each lesson.</p></div>
+      <div class="feature"><div class="icon">✅</div><h4>Feedback</h4><p>Receive immediate feedback and explanations for every answer.</p></div>
+      <div class="feature"><div class="icon">📊</div><h4>Track Progress</h4><p>Track your performance and monitor your learning improvement.</p></div>
+    </div>
+  </section>
+
+  <section class="about-quick">
+    <div class="about">
+      <h4>🎓 ABOUT THIS PROJECT</h4>
+      <p>This platform is developed as part of a research study titled <b>"Effects of Podcasts-Based Instructional Strategy on Students' Learning Outcome in English Language"</b>.</p>
+    </div>
+    <div class="quick">
+      <h4>QUICK ACCESS</h4>
+      <div class="quick-grid">
+        <a href="lessons.html"><div class="q">📖<b>Lessons</b><span>View all lessons</span></div></a>
+        <a href="podcasts.html"><div class="q">🎙️<b>Podcasts</b><span>Browse all podcasts</span></div></a>
+        <a href="quizzes.html"><div class="q">📋<b>Quizzes</b><span>Take quizzes and test yourself</span></div></a>
+        <a href="progress.html"><div class="q">📊<b>My Progress</b><span>View your performance</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-item"><span>👤</span><div><b>Researcher</b><br>Olawuyi Abdullahi Adetola<br><small>Computer Science, 300 Level</small></div></div>
+    <div class="footer-item"><span>📖</span><div><b>Course Code</b><br>CSC 311 – System Analysis and Design</div></div>
+    <div class="footer-item"><span>👥</span><div><b>Supervisor</b><br>Mr. Oludemi Boyejo</div></div>
+    <div class="footer-item"><span>📅</span><div><b>Academic Session</b><br>2024/2025</div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
