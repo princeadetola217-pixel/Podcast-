@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Quiz 1 - PodClass</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="header-left"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Federal_University_Oye-Ekiti_logo.png" class="logo"><div><h3>FEDERAL UNIVERSITY OYE-EKITI (FUOYE)</h3></div></div><nav><a href="index.html">🏠 Home</a><a href="quizzes.html" class="active">📋 Quizzes</a></nav></header>
+<section class="quiz-container"><h2>Quiz 1: Parts of Speech</h2>
+<form id="quizForm">
+  <div class="question"><p>1. Which is a Noun?</p><label><input type="radio" name="q1" value="a"> Run</label><label><input type="radio" name="q1" value="b"> Book</label><label><input type="radio" name="q1" value="c"> Quickly</label></div>
+  <div class="question"><p>2. "She sings beautifully" - 'beautifully' is a?</p><label><input type="radio" name="q2" value="a"> Adjective</label><label><input type="radio" name="q2" value="b"> Adverb</label><label><input type="radio" name="q2" value="c"> Verb</label></div>
+  <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+</form>
+<div id="result" style="display:none;"><h3>Your Score: <span id="score"></span>/2</h3><a href="https://forms.gle/YOUR-QUIZ1" target="_blank" class="btn">Submit to Google Form</a></div>
+</section>
+<footer><div class="footer-item"><span>👤</span><div><b>Researcher</b><br>Olawuyi Abdullahi Adetola</div></div></footer>
+<script>function submitQuiz(){const ans={q1:'b',q2:'b'};let s=0;for(let q in ans){let sel=document.querySelector(`input[name="${q}"]:checked`);if(sel&&sel.value===ans[q])s++;}document.getElementById('score').innerText=s;document.getElementById('result').style.display='block';document.getElementById('quizForm').style.display='none';}</script>
+</body></html>
