@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Progress - PodClass 300L</title><link rel="stylesheet" href="style.css"></head>
-<body>
-<header><div class="header-top"><img src="https://i.postimg.cc/3R0YhXkT/fuoye-logo.png" class="logo"><div><h3>YOUR PROGRESS</h3></div></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress - PodClass 300L</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="header-top"><div class="school-name">YOUR PROGRESS DASHBOARD</div></div>
 <nav><a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a><a href="podcasts.html">🎙️ Podcasts</a><a href="quizzes.html">📋 Quizzes</a><a href="progress.html" class="active">📊 Progress</a><a href="about.html">ℹ️ About</a></nav></header>
-
-<section class="container">
-  <h1>300L Student Progress Dashboard</h1>
-  <div class="progress-card"><h3>Quiz Score</h3><p id="quizScore">0/4</p></div>
-  <div class="progress-card"><h3>Lessons Completed</h3><p>4 of 4</p></div>
-  <div class="progress-card"><h3>Podcasts Listened</h3><p>4 of 4</p></div>
-  <div class="progress-card"><h3>Recordings Made</h3><p>Check Podcasts Page</p></div>
+<section class="container"><h1>300L Student Progress</h1>
+  <div style="display:grid; gap:15px;">
+    <div class="progress-card"><h3>Quiz Score</h3><p id="quizScore">0/20</p></div>
+    <div class="progress-card"><h3>Lessons Completed</h3><p>8 of 8</p></div>
+    <div class="progress-card"><h3>Podcasts Listened</h3><p>8 of 8</p></div>
+    <div class="progress-card"><h3>Recordings Made</h3><p>Check Podcasts Page</p></div>
+  </div>
 </section>
-<script>document.getElementById('quizScore').innerText = (localStorage.getItem('podclassScore') || "0") + "/4";</script>
-<footer><div><b>👤 ADEBISI TAIWO LATIFAT</b></div><div><b>👥 DR. ADEGBOYEGA, S.M.</b></div></footer>
-</body></html>
+<script>document.getElementById('quizScore').innerText = (localStorage.getItem('podclassScore') || "0") + "/20";</script>
+<footer><div><b>👤 ADEBISI TAIWO LATIFAT</b></div><div><b>👥 DR. ADEGBOYEGA, S.M.</b></div></footer></body></html>
