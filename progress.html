@@ -1,9 +1,18 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Progress - PodClass</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="header-left"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Federal_University_Oye-Ekiti_logo.png" class="logo"><div><h3>FEDERAL UNIVERSITY OYE-EKITI (FUOYE)</h3><p>Department of Computer Science</p></div></div><nav><a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a><a href="podcasts.html">🎙️ Podcasts</a><a href="quizzes.html">📋 Quizzes</a><a href="progress.html" class="active">📊 Progress</a><a href="about.html">ℹ️ About</a></nav></header>
-<section class="page"><h2>📊 My Progress</h2>
-<div class="progress-card"><h3>Quizzes Completed: 0/4</h3><div class="bar"><div style="width:0%"></div></div></div>
-<div class="progress-card"><h3>Podcasts Listened: 0/4</h3><div class="bar"><div style="width:0%"></div></div></div>
-<p><small>Progress updates when you submit quizzes via Google Form</small></p>
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress - PodClass 300L</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="header-top"><img src="https://i.postimg.cc/3R0YhXkT/fuoye-logo.png" class="logo"><div><h3>YOUR PROGRESS</h3></div></div>
+<nav><a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a><a href="podcasts.html">🎙️ Podcasts</a><a href="quizzes.html">📋 Quizzes</a><a href="progress.html" class="active">📊 Progress</a><a href="about.html">ℹ️ About</a></nav></header>
+
+<section class="container">
+  <h1>300L Student Progress Dashboard</h1>
+  <div class="progress-card"><h3>Quiz Score</h3><p id="quizScore">0/4</p></div>
+  <div class="progress-card"><h3>Lessons Completed</h3><p>4 of 4</p></div>
+  <div class="progress-card"><h3>Podcasts Listened</h3><p>4 of 4</p></div>
+  <div class="progress-card"><h3>Recordings Made</h3><p>Check Podcasts Page</p></div>
 </section>
-<footer><div class="footer-item"><span>👤</span><div><b>Researcher</b><br>Olawuyi Abdullahi Adetola</div></div><div class="footer-item"><span>📖</span><div><b>Course Code</b><br>CSC 311</div></div><div class="footer-item"><span>👥</span><div><b>Supervisor</b><br>Mr. Oludemi Boyejo</div></div><div class="footer-item"><span>📅</span><div><b>Session</b><br>2024/2025</div></div></footer>
+<script>document.getElementById('quizScore').innerText = (localStorage.getItem('podclassScore') || "0") + "/4";</script>
+<footer><div><b>👤 ADEBISI TAIWO LATIFAT</b></div><div><b>👥 DR. ADEGBOYEGA, S.M.</b></div></footer>
 </body></html>
