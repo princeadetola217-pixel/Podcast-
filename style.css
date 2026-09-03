@@ -170,6 +170,21 @@ nav a.active {
 .btn-record:hover {
   opacity: 0.9;
 }
+.btn-youtube { 
+  background: #FF0000; 
+  color: white; 
+  padding: 12px 20px; 
+  border-radius: 10px; 
+  text-decoration: none; 
+  font-weight: 700; 
+  display: block; 
+  text-align: center;
+  transition: 0.3s;
+}
+.btn-youtube:hover { 
+  background: #cc0000; 
+  transform: translateY(-1px);
+}
 
 /* ===== CARDS ===== */
 .hero-card {
@@ -240,6 +255,9 @@ nav a.active {
   border-radius: 10px; 
   margin: 12px 0; 
 }
+.video-box { 
+  margin: 12px 0; 
+}
 .youtube { 
   width: 100%; 
   height: 220px; 
@@ -303,11 +321,6 @@ footer b {
   footer { 
     grid-template-columns: repeat(4, 1fr); 
     text-align: left; 
-  }
-  .progress-card { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 15px; 
   }
 }
 
