@@ -1,24 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quizzes - PodClass 300L</title><link rel="stylesheet" href="style.css"></head>
-<body>
-<header>
-  <div class="header-top">
-    <div style="width:55px;height:55px;background:white;color:#0a0f2e;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;">FUOYE</div>
-    <div><h3>300L ENGLISH POST-TEST</h3><p>Time Left: <span id="timer" style="color:#ff6b6b; font-weight:800;">20:00</span></p></div>
-  </div>
-  <nav>
-    <a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a>
-    <a href="podcasts.html">🎙️ Podcasts</a><a href="quizzes.html" class="active">📋 Quizzes</a>
-    <a href="progress.html">📊 Progress</a><a href="about.html">ℹ️ About</a>
-  </nav>
-</header>
-
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzes - PodClass 300L</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="header-top"><div class="school-name">300L ENGLISH POST-TEST | Time: <span id="timer" style="color:#ff6b6b;">20:00</span></div></div>
+<nav><a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a><a href="podcasts.html">🎙️ Podcasts</a><a href="quizzes.html" class="active">📋 Quizzes</a><a href="progress.html">📊 Progress</a><a href="about.html">ℹ️ About</a></nav></header>
 <section class="container">
-  <h1>Post-Test Quiz - 20 Questions</h1>
-  <p style="color:#555; margin-bottom:15px;">You have 20 minutes. Answer all questions.</p>
-  
+  <h1>Post-Test Quiz - 20 Questions</h1><p style="color:#555;">You have 20 minutes. Answer all questions.</p>
   <form id="quizForm">
     <div class="quiz-q"><p><b>1.</b> Which is a Noun? </p><label><input type="radio" name="q1" value="a"> Run</label><label><input type="radio" name="q1" value="b"> School</label></div>
     <div class="quiz-q"><p><b>2.</b> Past tense of "go" is?</p><label><input type="radio" name="q2" value="a"> Went</label><label><input type="radio" name="q2" value="b"> Gone</label></div>
@@ -40,71 +26,16 @@
     <div class="quiz-q"><p><b>18.</b> "Bread and butter ___ my breakfast"</p><label><input type="radio" name="q18" value="a"> Is</label><label><input type="radio" name="q18" value="b"> Are</label></div>
     <div class="quiz-q"><p><b>19.</b> Correct spelling?</p><label><input type="radio" name="q19" value="a"> Recieve</label><label><input type="radio" name="q19" value="b"> Receive</label></div>
     <div class="quiz-q"><p><b>20.</b> "If I ___ you, I would go"</p><label><input type="radio" name="q20" value="a"> Was</label><label><input type="radio" name="q20" value="b"> Were</label></div>
-    
     <button type="button" class="btn-primary" onclick="checkQuiz()">Submit Quiz</button>
   </form>
-  
-  <div id="resultBox" style="display:none; margin-top:20px; background:white; padding:20px; border-radius:12px; text-align:center;">
+  <div id="resultBox" style="display:none; margin-top:20px; text-align:center;">
     <h2 id="score" style="color:#4f46e5; margin-bottom:15px;"></h2>
     <button class="btn-primary" onclick="downloadCert()">📜 Download Certificate</button>
   </div>
 </section>
-
 <script>
-let timeLeft = 1200; // 20 minutes in seconds
-let timerInterval = setInterval(()=>{
-  timeLeft--;
-  let min = Math.floor(timeLeft/60);
-  let sec = timeLeft%60;
-  document.getElementById('timer').innerText = `${min}:${sec<10?'0':''}${sec}`;
-  if(timeLeft<=0){ 
-    clearInterval(timerInterval); 
-    checkQuiz(); 
-    alert("Time Up! Your quiz has been submitted automatically"); 
-  }
-},1000);
-
-function checkQuiz(){
-  clearInterval(timerInterval);
-  let score = 0; 
-  const answers = {q1:"b", q2:"a", q3:"a", q4:"a", q5:"b", q6:"b", q7:"a", q8:"a", q9:"b", q10:"a",q11:"a", q12:"b", q13:"a", q14:"a", q15:"a", q16:"a", q17:"a", q18:"a", q19:"b", q20:"b"};
-  for(let i=1; i<=20; i++){
-    let q = document.querySelector(`input[name="q${i}"]:checked`);
-    if(q && q.value == answers[`q${i}`]) score++;
-  }
-  document.getElementById('score').innerText = `Your Score: ${score}/20 - ${Math.round(score/20*100)}%`;
-  localStorage.setItem('podclassScore', score);
-  document.getElementById('resultBox').style.display = 'block';
-  window.scrollTo(0, document.body.scrollHeight);
-}
-
-function downloadCert(){
-  let score = localStorage.getItem('podclassScore');
-  let percent = Math.round(score/20*100);
-  let date = new Date().toLocaleDateString();
-  let cert = `=================================\n
-    CERTIFICATE OF COMPLETION
-=================================
-
-This is to certify that
-A 300L STUDENT
-
-has successfully completed
-PodClass English Post-Test
-
-Score: ${score}/20 (${percent}%)
-Date: ${date}
-
-Federal University Oye-Ekiti
-Department of Educational Technology
-Supervisor: DR. ADEGBOYEGA, S.M.
-=================================`;
-  let blob = new Blob([cert], {type: 'text/plain'});
-  let link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = "PodClass_Certificate.txt";
-  link.click();
-}
+let timeLeft = 1200;let timerInterval = setInterval(()=>{timeLeft--;let min = Math.floor(timeLeft/60);let sec = timeLeft%60;document.getElementById('timer').innerText = `${min}:${sec<10?'0':''}${sec}`;if(timeLeft<=0){clearInterval(timerInterval);checkQuiz();alert("Time Up! Submitting automatically");}},1000);
+function checkQuiz(){clearInterval(timerInterval);let score = 0;const answers = {q1:"b", q2:"a", q3:"a", q4:"a", q5:"b", q6:"b", q7:"a", q8:"a", q9:"b", q10:"a",q11:"a", q12:"b", q13:"a", q14:"a", q15:"a", q16:"a", q17:"a", q18:"a", q19:"b", q20:"b"};for(let i=1; i<=20; i++){let q = document.querySelector(`input[name="q${i}"]:checked`);if(q && q.value == answers[`q${i}`]) score++;}document.getElementById('score').innerText = `Your Score: ${score}/20 - ${Math.round(score/20*100)}%`;localStorage.setItem('podclassScore', score);document.getElementById('resultBox').style.display = 'block';}
+function downloadCert(){let score = localStorage.getItem('podclassScore');let percent = Math.round(score/20*100);let date = new Date().toLocaleDateString();let cert = `CERTIFICATE OF COMPLETION\n\nThis certifies that\nA 300L STUDENT\n\nhas completed PodClass English Post-Test\nScore: ${score}/20 (${percent}%)\nDate: ${date}\n\nFUOYE | Dept of Educational Technology`;let blob = new Blob([cert], {type: 'text/plain'});let link = document.createElement('a');link.href = URL.createObjectURL(blob);link.download = "PodClass_Certificate.txt";link.click();}
 </script>
-<footer><div><b>👤 ADEBISI TAIWO LATIFAT</b></div><div><b>👥 DR. ADEGBOYEGA, S.M.</b></div></footer>
-</body></html>
+<footer><div><b>👤 ADEBISI TAIWO LATIFAT</b></div><div><b>👥 DR. ADEGBOYEGA, S.M.</b></div></footer></body></html>
