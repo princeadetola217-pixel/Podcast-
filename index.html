@@ -3,68 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - PodClass 300L</title>
+  <title>PodClass - Learn English with Podcasts</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="header-top"><div class="school-name">FEDERAL UNIVERSITY OYE-EKITI</div></div>
-  <nav>
-    <a href="index.html" class="active">🏠 Home</a>
-    <a href="lessons.html">📖 Lessons</a>
-    <a href="podcasts.html">🎙️ Podcasts</a>
-    <a href="quizzes.html">📋 Quizzes</a>
-    <a href="progress.html">📊 Progress</a>
-    <a href="about.html">ℹ️ About</a>
-  </nav>
+
+<header class="app-header">
+  <div class="header-bar">
+    <div class="logo">
+      <div class="logo-icon">🎙️</div>
+      <div>
+        <h2>PodClass</h2>
+        <p>Learn • Listen • Grow</p>
+      </div>
+    </div>
+    <div class="header-icons">🔔</div>
+  </div>
 </header>
 
-<section class="hero">
-  <h1>Learn English <span>Through Podcasts</span></h1>
-  <p>An interactive podcast-based learning platform designed for 300L students to improve learning outcomes in English Language.</p>
-  <div class="hero-buttons">
-    <a href="podcasts.html" class="btn-primary">🎙️ Start Learning</a>
-    <a href="quizzes.html" class="btn-secondary">📋 Take Post-Test</a>
+<section class="hero-section">
+  <div class="hero-text">
+    <h1>Learn English <br>Better with <br><span>Podcasts</span></h1>
+    <p>Improving students' learning outcomes through engaging podcast-based instruction for 300L English.</p>
+    <a href="podcasts.html" class="btn-listen">▶️ Listen Now</a>
   </div>
+  <div class="hero-img">🎧</div>
 </section>
 
 <section class="container">
-  <div class="feature-grid">
-    <div class="feature-card">
-      <div class="icon">🎧</div>
-      <h3>Listen & Practice</h3>
-      <p>Audio lessons + Self recording for 300L English. Learn at your own pace.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">🙋</div>
-      <h3>Ask Questions</h3>
-      <p>Record voice questions or type them. Send directly to your teacher.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">📊</div>
-      <h3>Track Progress</h3>
-      <p>Take quizzes and see your improvement in real time.</p>
-    </div>
+  <div class="search-box">
+    <span>🔍</span>
+    <input type="text" placeholder="Search episodes, topics...">
+    <span>⚙️</span>
   </div>
 
-  <div class="featured-lesson">
-    <h2>📚 FEATURED LESSON FOR 300L</h2>
-    <h3>Parts of Speech</h3>
-    <p>Understand Noun, Verb, Adjective, Adverb and more with examples and audio.</p>
-    <a href="podcasts.html#ep1" class="btn-primary">Go to Lesson →</a>
+  <div class="categories">
+    <div class="cat-card purple"><div>🎧</div><p>All Episodes</p></div>
+    <div class="cat-card green"><div>🎓</div><p>Grammar & Usage</p></div>
+    <div class="cat-card yellow"><div>📖</div><p>Reading & Comprehension</p></div>
+    <div class="cat-card red"><div>🗣️</div><p>Speaking & Listening</p></div>
+    <div class="cat-card blue"><div>✍️</div><p>Writing Skills</p></div>
   </div>
 
-  <div class="about-project">
-    <h2>ABOUT THIS PROJECT</h2>
-    <p>This platform is developed by <b>ADEBISI TAIWO LATIFAT</b> as part of a 300L research study titled 
-    <i>"Effects of Podcasts-Based Instructional Strategy on Students' Learning Outcome in English Language"</i> 
-    Department of Arts and Social Science Education, FUOYE.</p>
+  <div class="section-title">
+    <h3>Featured Episode</h3>
+    <a href="podcasts.html">See All ></a>
+  </div>
+
+  <div class="episode-card">
+    <div class="ep-thumb">Episode<br>01</div>
+    <div class="ep-info">
+      <span class="badge">FEATURED</span>
+      <h4>Parts of Speech in English</h4>
+      <p>15 min • For 300L Students</p>
+      <div class="progress-bar"><div style="width: 40%;"></div></div>
+      <div class="time">06:00 / 15:00</div>
+    </div>
+    <a href="podcasts.html#ep1" class="play-btn">▶️</a>
+  </div>
+
+  <div class="section-title">
+    <h3>Continue Learning</h3>
+    <a href="podcasts.html">See All ></a>
+  </div>
+
+  <div class="episode-card">
+    <div class="ep-thumb green">Episode<br>02</div>
+    <div class="ep-info">
+      <h4>Tenses: Present, Past, Future</h4>
+      <p>8 min left</p>
+      <div class="progress-bar"><div style="width: 60%;"></div></div>
+    </div>
+    <a href="podcasts.html#ep2" class="play-btn">▶️</a>
   </div>
 </section>
 
-<footer>
-  <div><b>👤 ADEBISI TAIWO LATIFAT</b> Researcher</div>
-  <div><b>👥 DR. ADEGBOYEGA, S.M.</b> Supervisor</div>
-</footer>
+<nav class="bottom-nav">
+  <a href="index.html" class="active"><div>🏠</div><span>Home</span></a>
+  <a href="lessons.html"><div>📖</div><span>Lessons</span></a>
+  <a href="podcasts.html" class="mic-btn"><div>🎙️</div></a>
+  <a href="quizzes.html"><div>📋</div><span>Quizzes</span></a>
+  <a href="progress.html"><div>👤</div><span>Profile</span></a>
+</nav>
+
 </body>
 </html>
