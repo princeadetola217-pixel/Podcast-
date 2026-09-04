@@ -98,6 +98,9 @@ function submitQuiz(){
     if(q && q.value === answers[`q${i}`]) score++;
   }
   
+  // SAVE SCORE FOR PROGRESS PAGE
+  localStorage.setItem('podclass_quizScore', score);
+  
   let remark = "";
   if(score >= 16) remark = "Excellent! Outstanding!";
   else if(score >= 12) remark = "Very Good! Keep it up!";
