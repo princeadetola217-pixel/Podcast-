@@ -26,7 +26,7 @@
   <!-- EPISODE 1 -->
   <div class="podcast-card" id="ep1">
     <h3>🎧 Episode 1: Parts of Speech</h3>
-    <p class="episode-note"><b>Note:</b> 8 parts: Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, Interjection. Example: Taiwo runs fast to school.</p>
+    <p class="episode-note"><b>Note:</b> 8 parts: Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, Interjection.</p>
     
     <div class="teacher-box">
       <b>👨‍🏫 Teacher's Audio:</b>
@@ -61,7 +61,7 @@
   <!-- EPISODE 2 -->
   <div class="podcast-card" id="ep2">
     <h3>🎧 Episode 2: Tenses</h3>
-    <p class="episode-note"><b>Note:</b> 12 tenses. Present, Past, Future + Simple, Continuous, Perfect. Example: I am reading now.</p>
+    <p class="episode-note"><b>Note:</b> 12 tenses. Present, Past, Future + Simple, Continuous, Perfect.</p>
     <div class="teacher-box">
       <b>👨‍🏫 Teacher's Audio:</b>
       <audio controls id="teacherAudio2"></audio>
@@ -82,13 +82,14 @@
     </div>
   </div>
 
-  <!-- DUPLICATE EP2 BLOCK FOR EP 3 TO EP 10. JUST CHANGE NUMBERS -->
-  <!-- For defense, 2 episodes is enough. Add more when you have time -->
-
 </section>
 
 <script>
-const YOUR_WHATSAPP_NUMBER = "234XXXXXXXXXX"; // CHANGE THIS TO YOUR WHATSAPP NUMBER
+const YOUR_WHATSAPP_NUMBER = "234XXXXXXXXXX"; // IMPORTANT: CHANGE THIS TO YOUR NUMBER
+
+// IPHONE FIX: Use mp4 for iPhone, webm for Android
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+const mimeType = isIOS? 'audio/mp4' : 'audio/webm';
 
 // TEACHER RECORDING
 const teacherRecorders = {};
@@ -102,13 +103,14 @@ document.querySelectorAll('.btn-teacher-record').forEach(btn => {
     if(this.dataset.recording!== "true"){
       try{
         const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-        teacherRecorders[ep] = new MediaRecorder(stream);
+        teacherRecorders[ep] = new MediaRecorder(stream, { mimeType: mimeType });
         teacherChunks[ep] = [];
         teacherRecorders[ep].ondataavailable = e => teacherChunks[ep].push(e.data);
         teacherRecorders[ep].onstop = () => {
-          const audioBlob = new Blob(teacherChunks[ep], {type: 'audio/webm'});
+          const audioBlob = new Blob(teacherChunks[ep], {type: mimeType});
           const audioUrl = URL.createObjectURL(audioBlob);
           audio.src = audioUrl;
+          audio.load();
           status.style.color = "#16a34a"; status.innerText = "✅ Teacher audio saved. Students can play it now.";
           stream.getTracks().forEach(track => track.stop());
         };
@@ -118,7 +120,7 @@ document.querySelectorAll('.btn-teacher-record').forEach(btn => {
         this.style.background = "linear-gradient(135deg, #ef4444, #dc2626)";
         status.style.color = "#d97706"; status.innerText = "🔴 Recording lesson... Speak now";
       } catch(err){
-        status.style.color = "#dc2626"; status.innerText = "Allow microphone permission in browser settings";
+        status.style.color = "#dc2626"; status.innerText = "❌ Allow microphone permission";
       }
     } else {
       if(teacherRecorders[ep] && teacherRecorders[ep].state!== "inactive"){ 
@@ -141,6 +143,7 @@ document.querySelectorAll('.teacher-upload').forEach(input => {
     if(file){
       const audioUrl = URL.createObjectURL(file);
       audio.src = audioUrl;
+      audio.load();
       status.style.color = "#16a34a"; status.innerText = "✅ Audio uploaded successfully";
     }
   });
@@ -158,11 +161,11 @@ document.querySelectorAll('.btn-record').forEach(btn => {
     if(this.dataset.recording!== "true"){
       try{
         const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-        studentRecorders[ep] = new MediaRecorder(stream);
+        studentRecorders[ep] = new MediaRecorder(stream, { mimeType: mimeType });
         studentChunks[ep] = [];
         studentRecorders[ep].ondataavailable = e => studentChunks[ep].push(e.data);
         studentRecorders[ep].onstop = () => {
-          const audioBlob = new Blob(studentChunks[ep], {type: 'audio/webm'});
+          const audioBlob = new Blob(studentChunks[ep], {type: mimeType});
           const audioUrl = URL.createObjectURL(audioBlob);
           const audioEl = document.createElement('audio');
           audioEl.controls = true; audioEl.src = audioUrl;
@@ -177,7 +180,7 @@ document.querySelectorAll('.btn-record').forEach(btn => {
         this.style.background = "linear-gradient(135deg, #ef4444, #dc2626)";
         status.style.color = "#d97706"; status.innerText = "🔴 Recording... Speak now";
       } catch(err){
-        status.style.color = "#dc2626"; status.innerText = "Allow microphone permission in Settings";
+        status.style.color = "#dc2626"; status.innerText = "❌ Allow microphone permission";
       }
     } else {
       if(studentRecorders[ep] && studentRecorders[ep].state!== "inactive"){ 
