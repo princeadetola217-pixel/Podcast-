@@ -6,37 +6,32 @@
   <title>Podcasts - PodClass 300L</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
-    body { background: #f7f7ff; color: #1e1e2d; padding: 0; padding-bottom: 80px; }
-    header { background: #7c3aed; color: white; padding: 18px 15px; position: sticky; top: 0; z-index: 100; }
-  .school-name { font-size: 14px; font-weight: 800; text-align: center; text-transform: uppercase; margin-bottom: 12px; }
+    body { background: #f7f7ff; color: #1e1e2d; padding-bottom: 80px; }
+    header { background: #7c3aed; color: white; padding: 18px 15px; position: sticky; top: 0; }
+ .school-name { font-size: 14px; font-weight: 800; text-align: center; text-transform: uppercase; margin-bottom: 12px; }
     nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     nav a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 20px; background: rgba(255,255,255,0.15); font-size: 13px; font-weight: 600; }
     nav a.active { background: #4c1d95; }
-  .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-    h1 { text-align: center; color: #7c3aed; margin: 20px 0 5px; font-size: 24px; }
-  .subtitle { text-align: center; color: #6b7280; margin-bottom: 25px; }
-  .podcast-card { background: white; padding: 22px; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #ede9fe; }
-  .podcast-card h3 { color: #7c3aed; margin-bottom: 10px; font-size: 18px; }
-  .episode-note { background: #fef3c7; padding: 12px; border-radius: 10px; font-size: 13px; color: #444; margin: 12px 0 18px; border-left: 4px solid #f59e0b; }
-  .teacher-box { background: #ede9fe; padding: 18px; border-radius: 14px; border-left: 4px solid #7c3aed; margin-bottom: 18px; }
-  .teacher-box b { color: #5b21b6; }
-  .teacher-box audio { width: 100%; margin: 12px 0; border-radius: 10px; }
-  .teacher-actions { display: flex; gap: 10px; margin-top: 12px; }
-  .btn-teacher-record { background: #1e1e2d; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; flex: 1; font-size: 14px; }
-  .btn-teacher-record.recording { background: #dc2626; animation: pulse 1s infinite; }
-  .btn-upload { background: #7c3aed; color: white; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; flex: 1; text-align: center; font-size: 14px; }
-  .student-box { background: #f0fdf4; padding: 20px; border-radius: 16px; border: 1px solid #bbf7d0; }
-  .student-box b { color: #065f46; font-size: 15px; }
-  .btn-record { background: #7c3aed; color: white; border: none; padding: 16px; border-radius: 12px; cursor: pointer; font-weight: 700; width: 100%; font-size: 15px; margin: 12px 0; }
-  .btn-record.recording { background: #dc2626; }
-  .record-status { margin: 10px 0; padding: 12px; background: #fefce8; border-radius: 10px; text-align: center; font-weight: 600; color: #a16207; font-size: 13px; min-height: 45px; }
-  .chat-input-box { display: flex; gap: 8px; align-items: center; background: white; padding: 5px 5px 5px 15px; border-radius: 25px; border: 1.5px solid #ddd; }
-  .text-input { flex: 1; padding: 10px 0; border: none; font-size: 14px; outline: none; background: transparent; }
-  .btn-send-text { background: #7c3aed; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-weight: 700; font-size: 16px; }
-  .btn-whatsapp { background: #25D366; color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; }
-    footer { background: #1e1e2d; color: white; text-align: center; padding: 25px 20px; font-size: 13px; margin-top: 30px; }
+ .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { text-align: center; color: #7c3aed; margin: 20px 0 5px; }
+ .subtitle { text-align: center; color: #6b7280; margin-bottom: 25px; }
+ .podcast-card { background: white; padding: 22px; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+ .podcast-card h3 { color: #7c3aed; margin-bottom: 10px; }
+ .episode-note { background: #fef3c7; padding: 12px; border-radius: 10px; font-size: 13px; border-left: 4px solid #f59e0b; margin: 12px 0; }
+ .teacher-box { background: #ede9fe; padding: 18px; border-radius: 14px; border-left: 4px solid #7c3aed; margin-bottom: 18px; }
+ .teacher-box audio { width: 100%; margin: 12px 0; }
+ .btn { background: #7c3aed; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; width: 100%; margin: 5px 0; font-size: 14px; }
+ .btn-black { background: #1e1e2d; }
+ .btn-black.recording { background: #dc2626; animation: pulse 1s infinite; }
+ .btn-green { background: #25D366; text-decoration: none; display: block; text-align: center; }
+ .btn-upload { background: #7c3aed; }
+ .student-box { background: #f0fdf4; padding: 20px; border-radius: 16px; border: 1px solid #bbf7d0; }
+ .record-status { margin: 10px 0; padding: 12px; background: #fefce8; border-radius: 10px; text-align: center; font-weight: 600; font-size: 13px; }
+ .chat-input-box { display: flex; gap: 8px; background: white; padding: 5px 15px; border-radius: 25px; border: 1.5px solid #ddd; margin: 10px 0; }
+ .text-input { flex: 1; border: none; outline: none; }
+ .btn-send { background: #7c3aed; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; }
+ .download-link { display: inline-block; margin-top: 8px; color: #7c3aed; font-weight: 700; text-decoration: underline; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
-    @media(max-width: 480px){.teacher-actions { flex-direction: column; }}
   </style>
 </head>
 <body>
@@ -56,46 +51,46 @@
   <h1>🎙️ Interactive Podcast Classroom</h1>
   <p class="subtitle">Teacher teaches. Students ask questions with Voice or Text.</p>
 
-  <!-- EPISODE 1 -->
-  <div class="podcast-card" id="ep1">
+  <div class="podcast-card">
     <h3>🎧 Episode 1: Parts of Speech</h3>
     <div class="episode-note"><b>Note:</b> 8 parts: Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, Interjection.</div>
     
     <div class="teacher-box">
       <b>👩‍🏫 Teacher's Audio:</b>
       <audio id="teacherAudio1" controls></audio>
-      <div class="teacher-actions">
-        <button class="btn-teacher-record" id="teacherBtn1" onclick="toggleTeacherRecord(1)">🎙️ Record Lesson</button>
-        <label class="btn-upload">📤 Upload Audio <input type="file" id="teacherUpload1" accept="audio/*" style="display:none" onchange="uploadTeacherAudio(1, this)"></label>
-      </div>
+      <div id="teacherDownload"></div>
+      <button class="btn btn-black" id="teacherBtn1" onclick="toggleTeacherRecord(1)">🎙️ Record Lesson</button>
+      <label class="btn btn-upload">📤 Upload Audio <input type="file" accept="audio/*,.m4a,.mp3" style="display:none" onchange="uploadTeacherAudio(1, this)"></label>
       <div id="teacherStatus1" style="margin-top:10px;font-size:13px;"></div>
     </div>
 
     <div class="student-box">
       <b>🙋 Student's Turn: I'm Listening</b>
-      <p style="font-size:13px;color:#065f46;margin:8px 0 15px;">Feel free to ask. Voice or Text, both are welcome.</p>
-      <button class="btn-record" id="studentBtn1" onmousedown="startStudentRecord(1)" onmouseup="stopStudentRecord(1)" ontouchstart="startStudentRecord(1)" ontouchend="stopStudentRecord(1)">🎙️ Hold to Record</button>
-      <div class="record-status" id="studentStatus1">Tap and hold to record your question</div>
-      <div style="text-align:center;margin:15px 0;color:#9ca3af;font-size:12px;">─── OR TYPE ───</div>
+      <p style="font-size:13px;color:#065f46;margin:8px 0;">Voice or Text, both are welcome.</p>
+      <button class="btn" id="studentBtn1" onmousedown="startStudentRecord(1)" onmouseup="stopStudentRecord(1)" ontouchstart="startStudentRecord(1)" ontouchend="stopStudentRecord(1)">🎙️ Hold to Record</button>
+      <div class="record-status" id="studentStatus1">Tap and hold to record</div>
+      <div id="studentDownload"></div>
+      <div style="text-align:center;margin:10px 0;color:#9ca3af;font-size:12px;">─── OR TYPE ───</div>
       <div class="chat-input-box">
         <input type="text" id="textInput1" placeholder="Write your question here..." class="text-input">
-        <button class="btn-send-text" onclick="sendTextQuestion(1)">➤</button>
+        <button class="btn-send" onclick="sendTextQuestion(1)">➤</button>
       </div>
-      <a href="#" class="btn-whatsapp" onclick="sendWhatsApp(1)">💬 Send Voice to Teacher</a>
+      <a href="https://wa.me/23480XXXXXXXX" target="_blank" class="btn btn-green">💬 Send to Teacher on WhatsApp</a>
     </div>
   </div>
 </div>
 
-<footer>
-  <b>👤 ADEBISI TAIWO LATIFAT</b> Researcher<br>
-  <b>👥 DR. ADEGBOYEGA, S.M.</b> Supervisor
-</footer>
-
 <script>
-const WHATSAPP_NUMBER = "23480XXXXXXXX"; // CHANGE THIS TO YOUR NUMBER
+const WHATSAPP_NUMBER = "23480XXXXXXXX"; // CHANGE THIS
 let mediaRecorder, audioChunks = [];
 let isRecording = false;
-let currentBlob = null;
+
+function getMimeType(){
+  // iPhone needs mp4, Android needs webm
+  if (MediaRecorder.isTypeSupported('audio/mp4')) return 'audio/mp4';
+  if (MediaRecorder.isTypeSupported('audio/webm')) return 'audio/webm';
+  return 'audio/mp4';
+}
 
 async function toggleTeacherRecord(ep){
   const btn = document.getElementById('teacherBtn1');
@@ -104,13 +99,16 @@ async function toggleTeacherRecord(ep){
   if(!isRecording){
     try{
       const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-      mediaRecorder = new MediaRecorder(stream);
+      const mime = getMimeType();
+      mediaRecorder = new MediaRecorder(stream, {mimeType: mime});
       audioChunks = [];
       mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
       mediaRecorder.onstop = () => {
-        currentBlob = new Blob(audioChunks, {type:'audio/webm'});
-        document.getElementById('teacherAudio1').src = URL.createObjectURL(currentBlob);
-        status.innerText = "✅ Recording saved. Play to preview";
+        const blob = new Blob(audioChunks, {type: mime});
+        const url = URL.createObjectURL(blob);
+        document.getElementById('teacherAudio1').src = url;
+        document.getElementById('teacherDownload').innerHTML = `<a href="${url}" download="Teacher_Ep${ep}.m4a" class="download-link">⬇️ Download Audio to Send</a>`;
+        status.innerText = "✅ Recording saved. Download it above";
         btn.innerText = "🎙️ Record Lesson";
         btn.classList.remove('recording');
         stream.getTracks().forEach(track => track.stop());
@@ -119,7 +117,7 @@ async function toggleTeacherRecord(ep){
       isRecording = true;
       btn.innerText = "⏹️ Stop Recording";
       btn.classList.add('recording');
-      status.innerText = "🔴 Recording... Tap Stop to finish";
+      status.innerText = "🔴 Recording...";
     }catch(err){ alert("Please allow microphone access"); }
   }else{
     mediaRecorder.stop();
@@ -130,7 +128,9 @@ async function toggleTeacherRecord(ep){
 function uploadTeacherAudio(ep, input){ 
   const file = input.files[0]; 
   if(file){ 
-    document.getElementById('teacherAudio1').src = URL.createObjectURL(file); 
+    const url = URL.createObjectURL(file);
+    document.getElementById('teacherAudio1').src = url; 
+    document.getElementById('teacherDownload').innerHTML = `<a href="${url}" download="${file.name}" class="download-link">⬇️ Download Audio</a>`;
     document.getElementById('teacherStatus1').innerText = "✅ Audio uploaded: " + file.name; 
   }
 }
@@ -140,19 +140,20 @@ async function startStudentRecord(ep){
   const status = document.getElementById('studentStatus1');
   try{
     const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-    mediaRecorder = new MediaRecorder(stream);
+    const mime = getMimeType();
+    mediaRecorder = new MediaRecorder(stream, {mimeType: mime});
     audioChunks = [];
     mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
     mediaRecorder.onstop = () => {
-      currentBlob = new Blob(audioChunks, {type:'audio/webm'});
-      status.innerHTML = "✅ Recording done! <audio controls src='"+URL.createObjectURL(currentBlob)+"'></audio>";
+      const blob = new Blob(audioChunks, {type: mime});
+      const url = URL.createObjectURL(blob);
+      document.getElementById('studentDownload').innerHTML = `<audio controls src="${url}"></audio><br><a href="${url}" download="Student_Ep${ep}.m4a" class="download-link">⬇️ Download to Send on WhatsApp</a>`;
+      status.innerText = "✅ Recording done! Download and send";
       btn.innerText = "🎙️ Hold to Record";
-      btn.classList.remove('recording');
       stream.getTracks().forEach(track => track.stop());
     };
     mediaRecorder.start();
     btn.innerText = "🔴 Recording...";
-    btn.classList.add('recording');
     status.innerText = "Recording... Release to stop";
   }catch(err){ alert("Please allow microphone access"); }
 }
@@ -162,19 +163,11 @@ function stopStudentRecord(ep){
 }
 
 function sendTextQuestion(ep){ 
-  let txt = document.getElementById('textInput'+ep).value; 
+  let txt = document.getElementById('textInput1').value; 
   if(txt){ 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Ep${ep} Question: ${encodeURIComponent(txt)}`,'_blank'); 
-    document.getElementById('textInput'+ep).value = "";
-  }else{ alert("Please type a question first"); }
-}
-
-function sendWhatsApp(ep){ 
-  if(currentBlob){ 
-    alert("Download the audio above first, then send to teacher on WhatsApp"); 
-  }else{ 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Student Question for Episode ${ep}`,'_blank'); 
-  } 
+    document.getElementById('textInput1').value = "";
+  }
 }
 </script>
 
