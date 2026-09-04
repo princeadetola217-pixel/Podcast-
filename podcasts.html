@@ -8,32 +8,35 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
     body { background: #f7f7ff; color: #1e1e2d; padding: 0; padding-bottom: 80px; }
     header { background: #7c3aed; color: white; padding: 18px 15px; position: sticky; top: 0; z-index: 100; }
-   .school-name { font-size: 14px; font-weight: 800; text-align: center; text-transform: uppercase; margin-bottom: 12px; }
+  .school-name { font-size: 14px; font-weight: 800; text-align: center; text-transform: uppercase; margin-bottom: 12px; }
     nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     nav a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 20px; background: rgba(255,255,255,0.15); font-size: 13px; font-weight: 600; }
     nav a.active { background: #4c1d95; }
-   .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 20px; }
     h1 { text-align: center; color: #7c3aed; margin: 20px 0 5px; font-size: 24px; }
-   .subtitle { text-align: center; color: #6b7280; margin-bottom: 25px; }
-   .podcast-card { background: white; padding: 22px; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #ede9fe; }
-   .podcast-card h3 { color: #7c3aed; margin-bottom: 10px; font-size: 18px; }
-   .episode-note { background: #fef3c7; padding: 12px; border-radius: 10px; font-size: 13px; color: #444; margin: 12px 0 18px; border-left: 4px solid #f59e0b; }
-   .teacher-box { background: #ede9fe; padding: 18px; border-radius: 14px; border-left: 4px solid #7c3aed; margin-bottom: 18px; }
-   .teacher-box b { color: #5b21b6; }
-   .teacher-box audio { width: 100%; margin: 12px 0; border-radius: 10px; }
-   .teacher-actions { display: flex; gap: 10px; margin-top: 12px; }
-   .btn-teacher-record { background: #1e1e2d; color: white; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 700; flex: 1; font-size: 14px; }
-   .btn-upload { background: #7c3aed; color: white; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: 700; flex: 1; text-align: center; font-size: 14px; }
-   .student-box { background: #f0fdf4; padding: 20px; border-radius: 16px; border: 1px solid #bbf7d0; }
-   .student-box b { color: #065f46; font-size: 15px; }
-   .btn-record { background: #7c3aed; color: white; border: none; padding: 16px; border-radius: 12px; cursor: pointer; font-weight: 700; width: 100%; font-size: 15px; margin: 12px 0; }
-   .record-status { margin: 10px 0; padding: 12px; background: #fefce8; border-radius: 10px; text-align: center; font-weight: 600; color: #a16207; font-size: 13px; }
-   .chat-input-box { display: flex; gap: 8px; align-items: center; background: white; padding: 5px 5px 5px 15px; border-radius: 25px; border: 1.5px solid #ddd; }
-   .text-input { flex: 1; padding: 10px 0; border: none; font-size: 14px; outline: none; background: transparent; }
-   .btn-send-text { background: #7c3aed; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-weight: 700; font-size: 16px; }
-   .btn-whatsapp { background: #25D366; color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; }
+  .subtitle { text-align: center; color: #6b7280; margin-bottom: 25px; }
+  .podcast-card { background: white; padding: 22px; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #ede9fe; }
+  .podcast-card h3 { color: #7c3aed; margin-bottom: 10px; font-size: 18px; }
+  .episode-note { background: #fef3c7; padding: 12px; border-radius: 10px; font-size: 13px; color: #444; margin: 12px 0 18px; border-left: 4px solid #f59e0b; }
+  .teacher-box { background: #ede9fe; padding: 18px; border-radius: 14px; border-left: 4px solid #7c3aed; margin-bottom: 18px; }
+  .teacher-box b { color: #5b21b6; }
+  .teacher-box audio { width: 100%; margin: 12px 0; border-radius: 10px; }
+  .teacher-actions { display: flex; gap: 10px; margin-top: 12px; }
+  .btn-teacher-record { background: #1e1e2d; color: white; border: none; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; flex: 1; font-size: 14px; }
+  .btn-teacher-record.recording { background: #dc2626; animation: pulse 1s infinite; }
+  .btn-upload { background: #7c3aed; color: white; padding: 14px; border-radius: 10px; cursor: pointer; font-weight: 700; flex: 1; text-align: center; font-size: 14px; }
+  .student-box { background: #f0fdf4; padding: 20px; border-radius: 16px; border: 1px solid #bbf7d0; }
+  .student-box b { color: #065f46; font-size: 15px; }
+  .btn-record { background: #7c3aed; color: white; border: none; padding: 16px; border-radius: 12px; cursor: pointer; font-weight: 700; width: 100%; font-size: 15px; margin: 12px 0; }
+  .btn-record.recording { background: #dc2626; }
+  .record-status { margin: 10px 0; padding: 12px; background: #fefce8; border-radius: 10px; text-align: center; font-weight: 600; color: #a16207; font-size: 13px; min-height: 45px; }
+  .chat-input-box { display: flex; gap: 8px; align-items: center; background: white; padding: 5px 5px 5px 15px; border-radius: 25px; border: 1.5px solid #ddd; }
+  .text-input { flex: 1; padding: 10px 0; border: none; font-size: 14px; outline: none; background: transparent; }
+  .btn-send-text { background: #7c3aed; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-weight: 700; font-size: 16px; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; }
     footer { background: #1e1e2d; color: white; text-align: center; padding: 25px 20px; font-size: 13px; margin-top: 30px; }
-    @media(max-width: 480px){.teacher-actions { flex-direction: column; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+    @media(max-width: 480px){.teacher-actions { flex-direction: column; }}
   </style>
 </head>
 <body>
@@ -62,8 +65,8 @@
       <b>👩‍🏫 Teacher's Audio:</b>
       <audio id="teacherAudio1" controls></audio>
       <div class="teacher-actions">
-        <button class="btn-teacher-record" onclick="startTeacherRecord(1)">🎙️ Record Lesson</button>
-        <label class="btn-upload">📤 Upload Audio <input type="file" id="teacherUpload1" accept="audio/*,.m4a,.mp4" style="display:none" onchange="uploadTeacherAudio(1, this)"></label>
+        <button class="btn-teacher-record" id="teacherBtn1" onclick="toggleTeacherRecord(1)">🎙️ Record Lesson</button>
+        <label class="btn-upload">📤 Upload Audio <input type="file" id="teacherUpload1" accept="audio/*" style="display:none" onchange="uploadTeacherAudio(1, this)"></label>
       </div>
       <div id="teacherStatus1" style="margin-top:10px;font-size:13px;"></div>
     </div>
@@ -71,43 +74,14 @@
     <div class="student-box">
       <b>🙋 Student's Turn: I'm Listening</b>
       <p style="font-size:13px;color:#065f46;margin:8px 0 15px;">Feel free to ask. Voice or Text, both are welcome.</p>
-      <button class="btn-record" onmousedown="startStudentRecord(1)" onmouseup="stopStudentRecord(1)" ontouchstart="startStudentRecord(1)" ontouchend="stopStudentRecord(1)">🎙️ Hold to Record</button>
-      <div class="record-status" id="studentStatus1"></div>
+      <button class="btn-record" id="studentBtn1" onmousedown="startStudentRecord(1)" onmouseup="stopStudentRecord(1)" ontouchstart="startStudentRecord(1)" ontouchend="stopStudentRecord(1)">🎙️ Hold to Record</button>
+      <div class="record-status" id="studentStatus1">Tap and hold to record your question</div>
       <div style="text-align:center;margin:15px 0;color:#9ca3af;font-size:12px;">─── OR TYPE ───</div>
       <div class="chat-input-box">
         <input type="text" id="textInput1" placeholder="Write your question here..." class="text-input">
         <button class="btn-send-text" onclick="sendTextQuestion(1)">➤</button>
       </div>
       <a href="#" class="btn-whatsapp" onclick="sendWhatsApp(1)">💬 Send Voice to Teacher</a>
-    </div>
-  </div>
-
-  <!-- EPISODE 2 -->
-  <div class="podcast-card" id="ep2">
-    <h3>🎧 Episode 2: Tenses</h3>
-    <div class="episode-note"><b>Note:</b> 12 tenses. Present, Past, Future + Simple, Continuous, Perfect.</div>
-    
-    <div class="teacher-box">
-      <b>👩‍🏫 Teacher's Audio:</b>
-      <audio id="teacherAudio2" controls></audio>
-      <div class="teacher-actions">
-        <button class="btn-teacher-record" onclick="startTeacherRecord(2)">🎙️ Record Lesson</button>
-        <label class="btn-upload">📤 Upload Audio <input type="file" id="teacherUpload2" accept="audio/*,.m4a,.mp4" style="display:none" onchange="uploadTeacherAudio(2, this)"></label>
-      </div>
-      <div id="teacherStatus2" style="margin-top:10px;font-size:13px;"></div>
-    </div>
-
-    <div class="student-box">
-      <b>🙋 Student's Turn: I'm Listening</b>
-      <p style="font-size:13px;color:#065f46;margin:8px 0 15px;">Feel free to ask. Voice or Text, both are welcome.</p>
-      <button class="btn-record" onmousedown="startStudentRecord(2)" onmouseup="stopStudentRecord(2)" ontouchstart="startStudentRecord(2)" ontouchend="stopStudentRecord(2)">🎙️ Hold to Record</button>
-      <div class="record-status" id="studentStatus2"></div>
-      <div style="text-align:center;margin:15px 0;color:#9ca3af;font-size:12px;">─── OR TYPE ───</div>
-      <div class="chat-input-box">
-        <input type="text" id="textInput2" placeholder="Write your question here..." class="text-input">
-        <button class="btn-send-text" onclick="sendTextQuestion(2)">➤</button>
-      </div>
-      <a href="#" class="btn-whatsapp" onclick="sendWhatsApp(2)">💬 Send Voice to Teacher</a>
     </div>
   </div>
 </div>
@@ -118,15 +92,90 @@
 </footer>
 
 <script>
-const WHATSAPP_NUMBER = "234 806 364 0345"; // CHANGE THIS TO YOUR NUMBER
+const WHATSAPP_NUMBER = "23480XXXXXXXX"; // CHANGE THIS TO YOUR NUMBER
 let mediaRecorder, audioChunks = [];
+let isRecording = false;
+let currentBlob = null;
 
-function startTeacherRecord(ep){ alert("Tap 'Stop' in browser popup to end recording for Ep " + ep); navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{mediaRecorder=new MediaRecorder(stream);audioChunks=[];mediaRecorder.ondataavailable=e=>audioChunks.push(e.data);mediaRecorder.onstop=()=>{const blob=new Blob(audioChunks,{type:'audio/mp4'});document.getElementById('teacherAudio'+ep).src=URL.createObjectURL(blob);document.getElementById('teacherStatus'+ep).innerText="✅ Recording saved";};mediaRecorder.start();setTimeout(()=>mediaRecorder.stop(),10000);}); }
-function uploadTeacherAudio(ep, input){ const file=input.files[0]; if(file){ document.getElementById('teacherAudio'+ep).src=URL.createObjectURL(file); document.getElementById('teacherStatus'+ep).innerText="✅ Audio uploaded"; }
-function startStudentRecord(ep){ document.getElementById('studentStatus'+ep).innerText="🔴 Recording..."; navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{mediaRecorder=new MediaRecorder(stream);audioChunks=[];mediaRecorder.ondataavailable=e=>audioChunks.push(e.data);mediaRecorder.onstop=()=>{const blob=new Blob(audioChunks,{type:'audio/mp4'});window.studentBlob=blob;document.getElementById('studentStatus'+ep).innerHTML="✅ Done. <audio controls src='"+URL.createObjectURL(blob)+"'></audio>";};mediaRecorder.start();}); }
-function stopStudentRecord(ep){ if(mediaRecorder) mediaRecorder.stop(); }
-function sendTextQuestion(ep){ let txt=document.getElementById('textInput'+ep).value; if(txt){ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Ep${ep} Question: ${encodeURIComponent(txt)}`); } }
-function sendWhatsApp(ep){ if(window.studentBlob){ alert("Download the audio above, then send to teacher on WhatsApp"); }else{ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Student Question for Episode ${ep}`); } }
+async function toggleTeacherRecord(ep){
+  const btn = document.getElementById('teacherBtn1');
+  const status = document.getElementById('teacherStatus1');
+  
+  if(!isRecording){
+    try{
+      const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+      mediaRecorder = new MediaRecorder(stream);
+      audioChunks = [];
+      mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+      mediaRecorder.onstop = () => {
+        currentBlob = new Blob(audioChunks, {type:'audio/webm'});
+        document.getElementById('teacherAudio1').src = URL.createObjectURL(currentBlob);
+        status.innerText = "✅ Recording saved. Play to preview";
+        btn.innerText = "🎙️ Record Lesson";
+        btn.classList.remove('recording');
+        stream.getTracks().forEach(track => track.stop());
+      };
+      mediaRecorder.start();
+      isRecording = true;
+      btn.innerText = "⏹️ Stop Recording";
+      btn.classList.add('recording');
+      status.innerText = "🔴 Recording... Tap Stop to finish";
+    }catch(err){ alert("Please allow microphone access"); }
+  }else{
+    mediaRecorder.stop();
+    isRecording = false;
+  }
+}
+
+function uploadTeacherAudio(ep, input){ 
+  const file = input.files[0]; 
+  if(file){ 
+    document.getElementById('teacherAudio1').src = URL.createObjectURL(file); 
+    document.getElementById('teacherStatus1').innerText = "✅ Audio uploaded: " + file.name; 
+  }
+}
+
+async function startStudentRecord(ep){
+  const btn = document.getElementById('studentBtn1');
+  const status = document.getElementById('studentStatus1');
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+    mediaRecorder.onstop = () => {
+      currentBlob = new Blob(audioChunks, {type:'audio/webm'});
+      status.innerHTML = "✅ Recording done! <audio controls src='"+URL.createObjectURL(currentBlob)+"'></audio>";
+      btn.innerText = "🎙️ Hold to Record";
+      btn.classList.remove('recording');
+      stream.getTracks().forEach(track => track.stop());
+    };
+    mediaRecorder.start();
+    btn.innerText = "🔴 Recording...";
+    btn.classList.add('recording');
+    status.innerText = "Recording... Release to stop";
+  }catch(err){ alert("Please allow microphone access"); }
+}
+
+function stopStudentRecord(ep){ 
+  if(mediaRecorder && mediaRecorder.state === "recording") mediaRecorder.stop(); 
+}
+
+function sendTextQuestion(ep){ 
+  let txt = document.getElementById('textInput'+ep).value; 
+  if(txt){ 
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Ep${ep} Question: ${encodeURIComponent(txt)}`,'_blank'); 
+    document.getElementById('textInput'+ep).value = "";
+  }else{ alert("Please type a question first"); }
+}
+
+function sendWhatsApp(ep){ 
+  if(currentBlob){ 
+    alert("Download the audio above first, then send to teacher on WhatsApp"); 
+  }else{ 
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Student Question for Episode ${ep}`,'_blank'); 
+  } 
+}
 </script>
 
 </body>
