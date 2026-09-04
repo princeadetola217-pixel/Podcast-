@@ -1,14 +1,118 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Progress - PodClass 300L</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="header-top"><div class="school-name">YOUR PROGRESS DASHBOARD</div></div>
-<nav><a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a><a href="podcasts.html">🎙️ Podcasts</a><a href="quizzes.html">📋 Quizzes</a><a href="progress.html" class="active">📊 Progress</a><a href="about.html">ℹ️ About</a></nav></header>
-<section class="container"><h1>300L Student Progress</h1>
-  <div style="display:grid; gap:15px;">
-    <div class="progress-card"><h3>Quiz Score</h3><p id="quizScore">0/20</p></div>
-    <div class="progress-card"><h3>Lessons Completed</h3><p>8 of 8</p></div>
-    <div class="progress-card"><h3>Podcasts Listened</h3><p>8 of 8</p></div>
-    <div class="progress-card"><h3>Recordings Made</h3><p>Check Podcasts Page</p></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress - PodClass 300L</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
+    body { background: #f7f7ff; color: #1e1e2d; padding-bottom: 80px; }
+    header { background: #7c3aed; color: white; padding: 18px 15px; position: sticky; top: 0; z-index: 100; }
+.school-name { font-size: 14px; font-weight: 800; text-align: center; text-transform: uppercase; margin-bottom: 12px; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    nav a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 20px; background: rgba(255,255,255,0.15); font-size: 13px; font-weight: 600; }
+    nav a.active { background: #4c1d95; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { text-align: center; color: #7c3aed; margin: 20px 0 5px; }
+.subtitle { text-align: center; color: #6b7280; margin-bottom: 25px; }
+.progress-card { background: white; padding: 20px; border-radius: 18px; margin-bottom: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #ede9fe; }
+.progress-card h3 { color: #7c3aed; font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.stat-number { font-size: 28px; font-weight: 800; color: #1e1e2d; }
+.stat-label { font-size: 13px; color: #6b7280; }
+.progress-bar-bg { background: #e5e7eb; height: 10px; border-radius: 10px; margin: 10px 0; overflow: hidden; }
+.progress-bar-fill { background: #7c3aed; height: 10px; border-radius: 10px; width: 0%; transition: width 0.5s; }
+.badge-green { background: #d1fae5; color: #059669; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.badge-yellow { background: #fef3c7; color: #d97706; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    footer { background: #1e1e2d; color: white; text-align: center; padding: 25px 20px; font-size: 13px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="school-name">FEDERAL UNIVERSITY OYE-EKITI</div>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="lessons.html">📖 Lessons</a>
+    <a href="podcasts.html">🎙️ Podcasts</a>
+    <a href="quizzes.html">📋 Quizzes</a>
+    <a href="progress.html" class="active">📊 Progress</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>📊 Your Progress Dashboard</h1>
+  <p class="subtitle">300L Student Progress Tracker</p>
+
+  <!-- QUIZ SCORE -->
+  <div class="progress-card">
+    <h3>📋 Quiz Score</h3>
+    <div class="stat-number" id="quizScore">0/20</div>
+    <div class="stat-label">Last Score</div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="quizBar"></div></div>
+    <span class="badge-yellow" id="quizBadge">Not Attempted</span>
   </div>
-</section>
-<script>document.getElementById('quizScore').innerText = (localStorage.getItem('podclassScore') || "0") + "/20";</script>
-<footer><div><b>👤 ADEBISI TAIWO LATIFAT</b></div><div><b>👥 DR. ADEGBOYEGA, S.M.</b></div></footer></body></html>
+
+  <!-- LESSONS -->
+  <div class="progress-card">
+    <h3>📖 Lessons Completed</h3>
+    <div class="stat-number" id="lessonCount">0/8</div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="lessonBar" style="background:#10b981"></div></div>
+    <span class="badge-green">On Track</span>
+  </div>
+
+  <!-- PODCASTS -->
+  <div class="progress-card">
+    <h3>🎙️ Podcasts Listened</h3>
+    <div class="stat-number" id="podcastCount">0/8</div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="podcastBar" style="background:#f59e0b"></div></div>
+    <span class="badge-yellow">Keep Listening</span>
+  </div>
+
+  <!-- RECORDINGS -->
+  <div class="progress-card">
+    <h3>🎤 Recordings Made</h3>
+    <div class="stat-number" id="recordCount">0</div>
+    <div class="stat-label">Check Podcasts Page to record</div>
+  </div>
+  
+  <button onclick="resetProgress()" style="background:#fee2e2; color:#dc2626; border:none; padding:12px; border-radius:10px; width:100%; font-weight:700;">🔄 Reset Progress</button>
+</div>
+
+<footer>
+  <b>👤 ADEBISI TAIWO LATIFAT</b> Researcher<br>
+  <b>👥 DR. ADEGBOYEGA, S.M.</b> Supervisor
+</footer>
+
+<script>
+// Load saved data from browser
+function loadProgress(){
+  const quiz = localStorage.getItem('podclass_quizScore') || 0;
+  const lessons = localStorage.getItem('podclass_lessons') || 0;
+  const podcasts = localStorage.getItem('podclass_podcasts') || 0;
+  const records = localStorage.getItem('podclass_records') || 0;
+  
+  document.getElementById('quizScore').innerText = `${quiz}/20`;
+  document.getElementById('quizBar').style.width = `${(quiz/20)*100}%`;
+  document.getElementById('quizBadge').innerText = quiz >= 10 ? "Passed" : "Not Attempted";
+  document.getElementById('quizBadge').className = quiz >= 10 ? "badge-green" : "badge-yellow";
+  
+  document.getElementById('lessonCount').innerText = `${lessons}/8`;
+  document.getElementById('lessonBar').style.width = `${(lessons/8)*100}%`;
+  
+  document.getElementById('podcastCount').innerText = `${podcasts}/8`;
+  document.getElementById('podcastBar').style.width = `${(podcasts/8)*100}%`;
+  
+  document.getElementById('recordCount').innerText = records;
+}
+
+function resetProgress(){
+  localStorage.clear();
+  alert("Progress Reset!");
+  loadProgress();
+}
+
+loadProgress();
+</script>
+
+</body>
+</html>
