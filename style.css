@@ -171,6 +171,21 @@ nav a.active {
   opacity: 0.9;
   transform: translateY(-1px);
 }
+.btn-send-text {
+  background: #0a0f2e;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.btn-send-text:hover {
+  opacity: 0.9;
+}
 .btn-youtube { 
   background: #FF0000; 
   color: white; 
@@ -270,6 +285,52 @@ nav a.active {
 }
 .quiz-q label:hover { 
   background: #f4f6ff; 
+  border-color: #4f46e5;
+}
+
+/* ===== PODCAST SPECIFIC ===== */
+.episode-note {
+  background: #fffbeb;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #444;
+  margin: 10px 0;
+  border-left: 3px solid #f59e0b;
+}
+.teacher-box {
+  background: #eef2ff;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 4px solid #4f46e5;
+  margin-bottom: 15px;
+}
+.teacher-box audio {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.student-box {
+  background: #f0fdf4;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 4px solid #25D366;
+}
+.student-box p {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+}
+.text-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  outline: none;
+}
+.text-input:focus {
   border-color: #4f46e5;
 }
 
