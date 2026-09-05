@@ -1,8 +1,69 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Podcasts - PodClass</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}body{background:#f7f7ff;padding-bottom:80px}header{background:#7c3aed;color:white;padding:18px 15px;position:sticky;top:0}.school-name{font-size:14px;font-weight:800;text-align:center;text-transform:uppercase;margin-bottom:12px}nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:20px;background:rgba(255,255,255,0.15);font-size:13px;font-weight:600}nav a.active{background:#4c1d95}.container{max-width:800px;margin:0 auto;padding:20px}h1{text-align:center;color:#7c3aed}.teacher-box{background:#ede9fe;padding:20px;border-radius:16px;border:2px dashed #7c3aed;margin:20px 0}.input-group{margin:12px 0}.input-group input{width:100%;padding:12px;border:1.5px solid #ddd;border-radius:10px}.btn{background:#7c3aed;color:white;border:none;padding:14px;border-radius:10px;width:100%;font-weight:700;cursor:pointer}.podcast-card{background:white;padding:20px;border-radius:18px;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,0.06)}audio{width:100%;margin:12px 0}footer{background:#1e1e2d;color:white;text-align:center;padding:25px;font-size:13px;margin-top:30px}</style></head><body>
-<header><div class="school-name">FEDERAL UNIVERSITY OYE-EKITI</div><nav><a href="index.html">🏠 Home</a><a href="lessons.html">📖 Lessons</a><a href="podcasts.html" class="active">🎙️ Podcasts</a><a href="quizzes.html">📋 Quizzes</a><a href="progress.html">📊 Progress</a></nav></header>
-<div class="container"><h1>🎙️ Podcasts</h1>
-<div class="teacher-box"><h3>👩‍🏫 Teacher Upload Podcast</h3><div class="input-group"><input type="text" id="podTitle" placeholder="Podcast Title"></div><div class="input-group"><input type="text" id="podDesc" placeholder="Description"></div><div class="input-group"><input type="file" id="podFile" accept=".mp3,.wav"></div><button class="btn" onclick="uploadPod()">📤 Upload Podcast</button></div>
-<div id="podList"></div></div>
-<footer><b>👤 ADEBISI TAIWO LATIFAT</b> Researcher<br><b>👥 DR. ADEGBOYEGA, S.M.</b> Supervisor</footer>
-<script>function uploadPod(){const t=document.getElementById('podTitle').value;const d=document.getElementById('podDesc').value;const f=document.getElementById('podFile').files[0];if(!t||!d||!f){alert("Fill all fields");return}const url=URL.createObjectURL(f);let pods=JSON.parse(localStorage.getItem('podclass_pods')||'[]');pods.unshift({t,d,url});localStorage.setItem('podclass_pods',JSON.stringify(pods));localStorage.setItem('podclass_podcasts',pods.length);loadPods()}
-function loadPods(){let pods=JSON.parse(localStorage.getItem('podclass_pods')||'[]');let html="";pods.forEach(p=>{html+=`<div class="podcast-card"><h3 style="color:#7c3aed">${p.t}</h3><p>${p.d}</p><audio controls src="${p.url}"></audio></div>`});document.getElementById('podList').innerHTML=html}loadPods()</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Podcasts - PodClass</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
+body{background:#f7f7ff;padding-bottom:80px}
+header{background:#7c3aed;color:white;padding:18px 15px;position:sticky;top:0;z-index:100}
+.school-name{font-size:14px;font-weight:800;text-align:center;text-transform:uppercase;margin-bottom:12px}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:20px;background:rgba(255,255,255,0.15);font-size:13px;font-weight:600}
+nav a.active{background:#4c1d95}
+.container{max-width:800px;margin:0 auto;padding:20px}
+h1{text-align:center;color:#7c3aed;margin-bottom:20px}
+.episode-card{background:white;padding:20px;border-radius:18px;margin-bottom:20px;box-shadow:0 4px 15px rgba(0,0,0,0.06)}
+.episode-title{color:#7c3aed;font-size:18px;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+.teacher-section{background:#ede9fe;padding:18px;border-radius:16px;margin:15px 0;border-left:4px solid #7c3aed}
+.student-section{background:#d1fae5;padding:18px;border-radius:16px;margin:15px 0;border-left:4px solid #10b981}
+audio{width:100%;margin:12px 0}
+.btn-black{background:#1e1e2d;color:white;border:none;padding:14px;border-radius:12px;width:100%;font-weight:700;margin:8px 0;cursor:pointer;font-size:15px}
+.btn-purple{background:#7c3aed;color:white;border:none;padding:14px;border-radius:12px;width:100%;font-weight:700;margin:8px 0;cursor:pointer;font-size:15px}
+footer{background:#1e1e2d;color:white;text-align:center;padding:25px;font-size:13px;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+  <div class="school-name">FEDERAL UNIVERSITY OYE-EKITI</div>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="lessons.html">📖 Lessons</a>
+    <a href="podcasts.html" class="active">🎙️ Podcasts</a>
+    <a href="quizzes.html">📋 Quizzes</a>
+    <a href="progress.html">📊 Progress</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>🎙️ Podcasts</h1>
+
+  <div class="episode-card">
+    <div class="episode-title">🎧 Episode 1: Parts of Speech</div>
+    
+    <!-- I REMOVED THE YELLOW NOTE BOX FROM HERE -->
+    
+    <div class="teacher-section">
+      <h3>👩‍🏫 Teacher's Audio:</h3>
+      <audio controls></audio>
+      <button class="btn-black">🎙️ Record Lesson</button>
+      <button class="btn-purple">📤 Upload Audio</button>
+    </div>
+
+    <div class="student-section">
+      <h3>👨‍🎓 Student's Turn: I'm Listening</h3>
+      <p style="color:#065f46;margin-bottom:12px">Voice or Text, both are welcome.</p>
+      <button class="btn-purple">🎙️ Hold to Record</button>
+      <p style="text-align:center;color:#6b7280;font-size:13px;margin-top:10px">Tap and hold to record</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <b>👤 ADEBISI TAIWO LATIFAT</b> Researcher<br>
+  <b>👥 DR. ADEGBOYEGA, S.M.</b> Supervisor
+</footer>
+</body>
+</html>
